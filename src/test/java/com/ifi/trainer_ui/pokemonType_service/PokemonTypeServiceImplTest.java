@@ -1,6 +1,5 @@
-package com.ifi.trainer_ui.service;
+package com.ifi.trainer_ui.pokemonType_service;
 
-import com.ifi.trainer_ui.bo.PokemonType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,10 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.lang.reflect.Method;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 class PokemonTypeServiceImplTest {
 

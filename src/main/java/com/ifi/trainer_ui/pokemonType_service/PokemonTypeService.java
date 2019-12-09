@@ -1,4 +1,4 @@
-package com.ifi.trainer_ui.service;
+package com.ifi.trainer_ui.pokemonType_service;
 
 import com.ifi.trainer_ui.bo.PokemonType;
 
