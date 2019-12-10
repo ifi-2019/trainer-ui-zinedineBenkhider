@@ -1,13 +1,16 @@
 package com.ifi.trainer_ui.bo;
 
 public class PokemonType {
+
     private int id;
     private int baseExperience;
     private int height;
     private String name;
     private Sprites sprites;
     private Stats stats;
-    private String type;
+    private String pokemonType;
+    private String level;
+
     public void setId(int id) {
         this.id = id;
     }
@@ -66,7 +69,20 @@ public class PokemonType {
 
     private int weight;
 
-    public String getType() {
-        return type;
+
+    public String getPokemonType() {
+        return pokemonType;
+    }
+
+    public void setPokemonType(String pokemonType) {
+        this.pokemonType = pokemonType;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 }

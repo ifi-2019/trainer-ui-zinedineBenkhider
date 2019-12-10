@@ -11,9 +11,6 @@ import java.lang.reflect.Method;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PokemonTypeServiceImplTest {
-
-
-
     @Test
     void pokemonServiceImpl_shouldBeAnnotatedWithService(){
         assertNotNull(PokemonTypeServiceImpl.class.getAnnotation(Service.class));

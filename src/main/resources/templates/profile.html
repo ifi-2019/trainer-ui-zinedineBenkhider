@@ -1,0 +1,26 @@
+{{> layout/header}}
+<body>
+{{> layout/navbar}}
+<div class="card-deck">
+    <a href="/UpdatePsw">Update your password</a>
+    {{#pokemons}}
+    <div class="col-md-3">
+        <div class="card shadow-sm mb-3">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{name}}
+                    <span class="badge badge-secondary">Id {{id}} <!--3--></span>
+                </h4>
+            </div>
+            <img class="card-img-top" src="{{sprites.back_default}}" alt="Pokemon"/>
+            <div class="card-body">
+                <span class="badge badge-primary">Speed : {{stats.speed}}</span>
+                <span class="badge badge-primary">Attack : {{stats.attack}}</span>
+                <span class="badge badge-primary">Defense : {{stats.defense}}</span>
+                <span class="badge badge-primary">HP : {{stats.hp}}</span>
+            </div>
+        </div>
+    </div>
+    {{/pokemons}}
+</div>
+</body>
+</html>
