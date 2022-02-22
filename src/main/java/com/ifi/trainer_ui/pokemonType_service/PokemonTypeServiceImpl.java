@@ -6,14 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class PokemonTypeServiceImpl implements PokemonTypeService {
-
     private RestTemplate restTemplate;
-
     private String pokemonServiceUrl;
 
     public List<PokemonType> listPokemonsTypes() {
@@ -24,7 +22,6 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
         }
         return res;
     }
-
 
     private PokemonType getPokemonWithId(String id) {
         PokemonType pokemonType= restTemplate.getForObject(pokemonServiceUrl+"/pokemon-types/"+id, PokemonType.class);
@@ -37,17 +34,14 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
         String typePokemon;
         String levelPokemonType;
         for(int i=0;i<trainer.getTeam().size();i++){
-
             typePokemon=trainer.getTeam().get(i).getPokemonType();
             levelPokemonType = trainer.getTeam().get(i).getLevel();
-
             PokemonType pokemonType =getPokemonWithId(typePokemon);//recuperer le pokemon de l'api pokemon type
             pokemonType.setLevel(levelPokemonType);//lui atribuer le niveau du pokemon qui se trouve dans trainer
             res.add(pokemonType);
         }
         trainer.setTeam(res);
     }
-
 
     @Autowired
     void setRestTemplate(RestTemplate restTemplate) {
@@ -57,7 +51,4 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
         void setPokemonTypeServiceUrl(String pokemonServiceUrl) {
             this.pokemonServiceUrl=pokemonServiceUrl;
         }
-
-
-
 }
