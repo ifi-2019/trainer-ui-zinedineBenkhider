@@ -9,7 +9,6 @@ public class SecurityControllerAdvice {
     @ModelAttribute(value = "user")
     Object principal(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
         return authentication.getPrincipal();
     }
 }
