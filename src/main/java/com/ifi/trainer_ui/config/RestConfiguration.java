@@ -6,17 +6,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
 public class RestConfiguration {
-
     @Value("${trainer.service.username}")
     private String user;
     @Value("${trainer.service.password}")
     private String password;
+    
     @Bean
     RestTemplate trainerApiRestTemplate(){
         RestTemplate restTemplate=new RestTemplate();
@@ -32,5 +31,5 @@ public class RestConfiguration {
         return new RestTemplate();
     }
 
-    }
+   }
 
